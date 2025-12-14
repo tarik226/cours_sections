@@ -59,3 +59,14 @@ VALUES
 (3, 'Patrons de conception', 'Étude des principaux design patterns.', 1, NOW()),
 (3, 'Microservices', 'Introduction aux architectures microservices.', 2, NOW()),
 (3, 'Scalabilité et performance', 'Optimisation des systèmes distribués.', 3, NOW());
+
+
+-- ajout d attribut apres creation
+ALTER TABLE courses add COLUMN duration date DEFAULT DATETIME;
+-- changer le nom d attribut apres creation
+ALTER Table courses RENAME COLUMN title to titre;
+-- suppression du column 
+ALTER Table courses DROP COLUMN description;
+-- modifire le type d attribut description apres creation
+ALTER Table courses modify COLUMN description char(200);
+ALTER Table sections modify COLUMN content text not NULL;
